@@ -11,9 +11,25 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            string hello = ("Hello World");
-            Console.WriteLine(hello);
+            Console.WriteLine("THIS IS A CALCULATOR \n");
+
+            Console.Write("Please, enter one number:");
+            string firstNumber;
+            firstNumber = Console.ReadLine();
+
+            Console.Write("Now, please, enter another number:");
+            string secondNumber;
+            secondNumber = Console.ReadLine();
+
+            int firstNumberInt = int.Parse(firstNumber);
+            int secondNumberInt = int.Parse(secondNumber);
+
+            int result = firstNumberInt + secondNumberInt;
+            Console.WriteLine("This is the sume of your numbers:" + result);
+
             Console.ReadLine();
+
+       
         }
     }
 }
