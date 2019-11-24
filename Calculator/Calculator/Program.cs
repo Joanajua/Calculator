@@ -17,9 +17,52 @@ namespace Calculator
 
             //Operators
             Console.Write(" Enter one operator ( + , - , * , / ): ");
-            string operatorSimbol;
-            operatorSimbol = Console.ReadLine();
+            string op;
+            op = Console.ReadLine();
 
+            //How many numbers?
+            Console.Write(" How many numbers would you like to " + op + " ?: ");
+
+            string Numbers;
+            Numbers = Console.ReadLine();
+            int numbersInt = int.Parse(Numbers);
+
+
+            //Define an array that would be created with as much items as NumbersInt says.
+            int[] numbersArray = new int[numbersInt];
+            
+            for(int indexArray = 0; indexArray < numbersInt; indexArray++)
+            {
+                Console.Write(" Please Enter number " + (indexArray + 1) + ": ");
+                numbersArray[indexArray] = int.Parse(Console.ReadLine());
+            }
+
+
+            int result = numbersArray[0];
+            //indexArray starts at value 1 because number 1 doesnt do any operation
+            for (int indexArray = 1; indexArray < numbersInt; indexArray++)
+            {
+                if (op == "*")
+                {
+                    result = result * numbersArray[indexArray];
+                }
+                else if (op == "/")
+                {
+                    result = result / numbersArray[indexArray];
+                }
+                else if (op == "+")
+                {
+                    result = result + numbersArray[indexArray];
+                }
+                else if (op == "-")
+                {
+                    result = result - numbersArray[indexArray];
+                }
+            }
+
+            Console.WriteLine(" The answer is: " + result);
+            /*ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+            
             //First Number
             Console.Write("Please, enter one number: ");
             string firstNumber;
@@ -37,7 +80,7 @@ namespace Calculator
 
             int result = 0;
 
-            if (operatorSimbol == "+")
+            if (op == "+")
             {
                result = firstNumberInt + secondNumberInt;
             }
@@ -59,6 +102,8 @@ namespace Calculator
             
 
             Console.WriteLine("This is the result of your numbers:" + result);
+
+         ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
 
             Console.ReadLine();
 
